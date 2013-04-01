@@ -15,8 +15,8 @@ class App(AppBase):
 
     def handle (self, message):
         # if UNDER_MAINTENANCE flag is set 
-        if settings.UNDER_MAINTENANCE:
-            message.respond('We have noted your message. This service is under scheduled maintenance please check later.')
+        if settings.UNDER_MAINTENANCE[0]:
+            message.respond(settings.UNDER_MAINTENANCE[1])
             return True
         
         return False
